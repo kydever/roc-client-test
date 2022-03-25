@@ -32,6 +32,13 @@ jobs:
         run: |
           docker run -e TZ=Asia/Shanghai -e MYSQL_ALLOW_EMPTY_PASSWORD=true -e MYSQL_ROOT_HOST=% -e MYSQL_DATABASE=hyperf -v $PWD/.github/init.sql:/docker-entrypoint-initdb.d/init.sql -d -p 3306:3306 --name mysql mysql/mysql-server:5.7
           docker run -p 6379:6379 -d --name redis redis:latest
+      - name: Setup JSON RPC Server
+        run: |
+          cd /tmp
+          git clone https://github.com/hyperf/roc.git
+          cd roc
+          docker build . -f examples/json_rpc/Dockerfile -t json_rpc
+          docker run -p 9501:9501 --rm --name json_rpc_server -d json_rpc:latest
       - name: Show Environment
         run: |
           php -v
