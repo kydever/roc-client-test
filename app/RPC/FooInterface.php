@@ -9,18 +9,12 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-namespace HyperfTest\Cases;
+namespace App\RPC;
 
-use HyperfTest\HttpTestCase;
-
-/**
- * @internal
- * @coversNothing
- */
-class ExampleTest extends HttpTestCase
+interface FooInterface
 {
-    public function testExample()
-    {
-        $this->assertTrue(true);
-    }
+    /**
+     * @return array ['is_success' => true]
+     */
+    public function save(int $id, array $input): array;
 }

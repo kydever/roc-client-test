@@ -11,16 +11,20 @@ declare(strict_types=1);
  */
 namespace HyperfTest\Cases;
 
+use App\RPC\FooInterface;
 use HyperfTest\HttpTestCase;
 
 /**
  * @internal
  * @coversNothing
  */
-class ExampleTest extends HttpTestCase
+class RocTest extends HttpTestCase
 {
-    public function testExample()
+    public function testRocRequest()
     {
-        $this->assertTrue(true);
+        $res = di()->get(FooInterface::class)->save(1, ['name' => '李铭昕', 'gender' => 1]);
+
+        $this->assertIsArray($res);
+        $this->assertTrue($res['is_success']);
     }
 }
