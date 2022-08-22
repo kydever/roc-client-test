@@ -18,7 +18,7 @@
         "ext-pdo": "*",
         "ext-pdo_mysql": "*",
         "ext-redis": "*",
-        "ext-swoole": ">=4.5",
+        "ext-swoole": ">=5.0",
         "hyperf/async-queue": "3.0.*",
         "hyperf/cache": "3.0.*",
         "hyperf/command": "3.0.*",
@@ -29,7 +29,7 @@
         "hyperf/db-connection": "3.0.*",
         "hyperf/di": "3.0.*",
         "hyperf/dispatcher": "3.0.*",
-        "hyperf/engine": "^1.2",
+        "hyperf/engine": "^2.0",
         "hyperf/event": "3.0.*",
         "hyperf/exception-handler": "3.0.*",
         "hyperf/framework": "3.0.*",
@@ -47,12 +47,10 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
         "hyperf/devtool": "3.0.*",
-        "hyperf/ide-helper": "3.0.*",
         "hyperf/testing": "3.0.*",
         "mockery/mockery": "^1.0",
         "phpstan/phpstan": "^1.0",
-        "swoole/ide-helper": "dev-master",
-        "symfony/var-dumper": "^5.1"
+        "swoole/ide-helper": "dev-master"
     },
     "autoload": {
         "psr-4": {

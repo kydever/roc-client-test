@@ -22,7 +22,6 @@ use Hyperf\Utils\Codec\Json;
 use Hyperf\Utils\Reflection\ClassInvoker;
 use HyperfTest\HttpTestCase;
 use Multiplex\ChannelManager;
-use Multiplex\Contract\HasHeartbeatInterface;
 use Multiplex\Contract\PackerInterface;
 use Multiplex\Packet;
 
@@ -114,7 +113,7 @@ class RocTest extends HttpTestCase
             new Packet(1, $body = '{"id":"624d59901bd82","path":"\/foo\/save","data":[1,{"name":"李铭昕","gender":1}],"context":[]}')
         );
         $payloads = str_split($payload, intval(strlen($body) / 2 + 1));
-        foreach ($payloads as $payload){
+        foreach ($payloads as $payload) {
             usleep(100000);
             $chan->push($payload);
         }
